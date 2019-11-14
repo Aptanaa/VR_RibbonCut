@@ -23,12 +23,11 @@ public class ScissorChop : MonoBehaviour
             yield return null;
 
 
-        if(collidedObjects.Count > 0) {
-                for (int i = 0; i < collidedObjects.Count; i++)
-                {   
-                    Destroy(collidedObjects[i].GetComponent<CharacterJoint>());
-                }
-            }
+        //TODO: Handle edge cases
+        if(collidedObjects.Count > 0) { 
+            GameObject obj = collidedObjects[Mathf.FloorToInt(collidedObjects.Count / 2)];
+            obj.GetComponent<CharacterJoint>().connectedBody = obj.transform.parent.GetChild(obj.transform.GetSiblingIndex() + 1).GetComponent<Rigidbody>();
+        }
     }
 
     void OnTriggerEnter(Collider other) {

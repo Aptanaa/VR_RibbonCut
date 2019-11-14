@@ -26,12 +26,12 @@ public class RopeSpawn : MonoBehaviour
     }
 
     void Update() {
-        for (int i = 0; i < numberOfParts; i++)
-        {
-            pointsForLR[i] = parts[i].position;
-        }
+        // for (int i = 0; i < numberOfParts; i++)
+        // {
+        //     pointsForLR[i] = parts[i].position;
+        // }
         
-        line.SetPositions(pointsForLR);
+        // line.SetPositions(pointsForLR);
     }
 
     public void Spawn()
@@ -43,12 +43,12 @@ public class RopeSpawn : MonoBehaviour
         parent.name = "RopeHolder";
 
         //Add Linerenderer
-        line = parent.AddComponent(typeof(LineRenderer)) as LineRenderer;
-        line.material = new Material(Shader.Find("Sprites/Default"));
-        line.widthMultiplier = 0.2f;
-        line.startColor = Color.red;
-        line.endColor = Color.red;
-        line.numCapVertices = 10;
+        // line = parent.AddComponent(typeof(LineRenderer)) as LineRenderer;
+        // line.material = new Material(Shader.Find("Sprites/Default"));
+        // line.widthMultiplier = 0.2f;
+        // line.startColor = Color.red;
+        // line.endColor = Color.red;
+        // line.numCapVertices = 10;
 
         //Calculate artificial middlepoint
         Vector3 middlePoint = startPoint.position + (endPoint.position - startPoint.position) / 2;
@@ -90,8 +90,8 @@ public class RopeSpawn : MonoBehaviour
         parent.transform.GetChild(parent.transform.childCount - 1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
 
         //Set initial information for the line renderer
-        line.positionCount = numberOfParts;
-        line.SetPositions(pointsForLR);
+        // line.positionCount = numberOfParts;
+        // line.SetPositions(pointsForLR);
     }
 
     private Vector3 GetPointOnCurve (Vector3 start, Vector3 middle, Vector3 end, float t) {

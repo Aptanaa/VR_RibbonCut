@@ -4,9 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - projectile
-  - FxTemporaire
-  - Rope
+  - Scissor
   layers:
   - Default
   - TransparentFX
