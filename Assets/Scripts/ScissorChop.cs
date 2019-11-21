@@ -1,9 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ScissorChop : MonoBehaviour
 {
+
+    private bool firstCut = true;
+    
+    [SerializeField]
+    private UnityEvent CutEvent;
 
     private Animator anim;
 
@@ -27,6 +33,11 @@ public class ScissorChop : MonoBehaviour
         if(collidedObjects.Count > 0) { 
             GameObject obj = collidedObjects[Mathf.FloorToInt(collidedObjects.Count / 2)];
             obj.GetComponent<CharacterJoint>().connectedBody = obj.transform.parent.GetChild(obj.transform.GetSiblingIndex() + 1).GetComponent<Rigidbody>();
+
+            if(firstCut) {
+                firstCut = false; 
+                CutEvent.Invoke();
+            } 
         }
     }
 
