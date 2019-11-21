@@ -87,6 +87,8 @@ namespace Assets.Scripts.Controller
 
         private void GrabObject()
         {
+            if(_collidingObject.tag == "Rope") return;
+
             _objectInHand = _collidingObject;
             _collidingObject = null;
 

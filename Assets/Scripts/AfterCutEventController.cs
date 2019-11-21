@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AfterCutEventController : MonoBehaviour
 {
     [SerializeField]
     private float ballonAscendingRate;
+
+    [SerializeField]
+    private float particleDelay;
 
     public void OnCutEventParticleBehaviour() {
         StartCoroutine("ParticleBehaviour");
@@ -14,7 +18,15 @@ public class AfterCutEventController : MonoBehaviour
     private IEnumerator ParticleBehaviour() {
         for (int i = 0; i < transform.childCount; i++)
         {
-            transform.GetChild(i).GetComponent<ParticleSystem>().Play();
+            Transform tmp = transform.GetChild(i);
+            AudioSource aus = tmp.GetComponent<AudioSource>();
+            ParticleSystem ps = tmp.GetComponent<ParticleSystem>();
+            
+            ps.Play();
+            aus.Play();
+            yield return new WaitForSeconds(particleDelay);
+            aus.Stop();
+            ps.Stop();
         }
 
         yield return new WaitForSeconds(4f);
