@@ -47,11 +47,6 @@ namespace Assets.Scripts.Controller
                     ReleaseObject();
                 }
             }
-
-            //Initiate Scissor Animation
-            if (Controller.GetPressDown(ScissorButton) && _objectInHand != null && _objectInHand.tag == "Scissor") {
-                _objectInHand.GetComponent<ScissorChop>().StartCoroutine("OnCompleteChopAnimation");
-            }
         }
 
         private void SetCollidingObject(Collider col)

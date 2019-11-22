@@ -5,12 +5,6 @@ using UnityEngine.Audio;
 
 public class AfterCutEventController : MonoBehaviour
 {
-    [SerializeField]
-    private float ballonAscendingRate;
-
-    [SerializeField]
-    private float particleDelay;
-
     public void OnCutEventParticleBehaviour() {
         StartCoroutine("ParticleBehaviour");
     }
@@ -24,7 +18,7 @@ public class AfterCutEventController : MonoBehaviour
             
             ps.Play();
             aus.Play();
-            yield return new WaitForSeconds(particleDelay);
+            yield return new WaitForSeconds(GlobalStateController.particleDelay);
             aus.Stop();
             ps.Stop();
         }
@@ -42,14 +36,12 @@ public class AfterCutEventController : MonoBehaviour
     }
 
     private IEnumerator BallonBehaviour() {
-        Vector3 addVector = new Vector3(0, ballonAscendingRate, 0);
 
-        while(transform.GetChild(0).transform.position.y < 15) {
-            for (int j = 0; j < transform.childCount; j++)
-            {
-                transform.GetChild(j).transform.position += addVector * Time.fixedDeltaTime;
-            }
-            yield return new WaitForFixedUpdate();
+        for (int j = 0; j < transform.childCount; j++)
+        {
+            transform.GetChild(j).GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(GlobalStateController.ballonRandomRange.x, GlobalStateController.ballonRandomRange.y), GlobalStateController.ballonAscendingRate, Random.Range(GlobalStateController.ballonRandomRange.x, GlobalStateController.ballonRandomRange.y)));
+            yield return new WaitForSeconds(GlobalStateController.particleDelay);
         }
+        yield return new WaitForFixedUpdate();
     }
 }
