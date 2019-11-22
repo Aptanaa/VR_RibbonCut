@@ -50,7 +50,6 @@ namespace Assets.Scripts.Controller
 
             //Initiate Scissor Animation
             if (Controller.GetPressDown(ScissorButton) && _objectInHand != null && _objectInHand.tag == "Scissor") {
-                _objectInHand.GetComponent<Animator>().SetTrigger("TriggerChopAnimation");
                 _objectInHand.GetComponent<ScissorChop>().StartCoroutine("OnCompleteChopAnimation");
             }
         }

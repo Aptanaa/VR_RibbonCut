@@ -25,8 +25,10 @@ public class ScissorChop : MonoBehaviour
     //Gets started from ControllerGrab.cs
     IEnumerator OnCompleteChopAnimation() 
     {
+        anim.SetTrigger("TriggerChopAnimation");
+
         while(anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
-            yield return null;
+            yield return new WaitForEndOfFrame();
 
 
         //TODO: Handle edge cases
