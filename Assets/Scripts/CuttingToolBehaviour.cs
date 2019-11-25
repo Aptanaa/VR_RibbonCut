@@ -26,6 +26,8 @@ public class CuttingToolBehaviour : MonoBehaviour
         if(anim != null) {
             anim.SetTrigger("TriggerChopAnimation");
 
+            yield return new WaitForEndOfFrame();
+
             while(anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
                 yield return new WaitForEndOfFrame();
         }

@@ -8,9 +8,6 @@ namespace Assets.Scripts.Controller
     {
         public EVRButtonId PickupButton;
 
-        [SerializeField]
-        private EVRButtonId ScissorButton;
-
         private SteamVR_TrackedObject _trackedObj;
         private SteamVR_Controller.Device Controller
         {
@@ -90,11 +87,12 @@ namespace Assets.Scripts.Controller
             if (pickupOptions)
             {
                 // equip to correct position in hand
-                if (pickupOptions.Offset != Vector3.zero)
+                if (pickupOptions.OffsetPosition != Vector3.zero || pickupOptions.OffsetRotation != Vector3.zero)
                 {
                     _objectInHand.transform.position = transform.position;
                     _objectInHand.transform.rotation = transform.rotation;
-                    _objectInHand.transform.Translate(pickupOptions.Offset);
+                    _objectInHand.transform.rotation *= Quaternion.Euler(pickupOptions.OffsetRotation);
+                    _objectInHand.transform.Translate(pickupOptions.OffsetPosition);
                 }
 
                 // set grab options

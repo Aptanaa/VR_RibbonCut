@@ -23,12 +23,12 @@ public class AfterCutEventController : MonoBehaviour
             ps.Stop();
         }
 
-        yield return new WaitForSeconds(4f);
+        // yield return new WaitForSeconds(4f);
 
-        for (int j = 0; j < transform.childCount; j++)
-        {
-            transform.GetChild(j).GetComponent<ParticleSystem>().Stop();
-        }
+        // for (int j = 0; j < transform.childCount; j++)
+        // {
+        //     transform.GetChild(j).GetComponent<ParticleSystem>().Stop();
+        // }
     }
 
     public void OnCutEventBallonBehaviour() {

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Scissor
+  - Rope
+  - Enemy
+  - Controller
   layers:
   - Default
   - TransparentFX
