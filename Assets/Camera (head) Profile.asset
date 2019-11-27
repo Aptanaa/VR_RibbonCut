@@ -17,14 +17,14 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   mode:
-    overrideState: 0
-    value: 1
-  intensity:
-    overrideState: 0
+    overrideState: 1
     value: 0
+  intensity:
+    overrideState: 1
+    value: 1.5
   color:
-    overrideState: 0
-    value: {r: 0, g: 0, b: 0, a: 1}
+    overrideState: 1
+    value: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 1}
   ambientOnly:
     overrideState: 0
     value: 1
@@ -38,7 +38,7 @@ MonoBehaviour:
     overrideState: 0
     value: -12
   thicknessModifier:
-    overrideState: 0
+    overrideState: 1
     value: 1
   directLightingStrength:
     overrideState: 0
@@ -66,11 +66,11 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   intensity:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 3
   threshold:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: 0.75
   softKnee:
     overrideState: 0
     value: 0.5
@@ -96,7 +96,7 @@ MonoBehaviour:
   dirtIntensity:
     overrideState: 0
     value: 0
---- !u!114 &-2588635958109695742
+--- !u!114 &-570609968681504274
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,8 +148,8 @@ MonoBehaviour:
     overrideState: 0
     value: 1
   temperature:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: -41
   tint:
     overrideState: 0
     value: 0
@@ -166,8 +166,8 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   postExposure:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 0.5
   contrast:
     overrideState: 0
     value: 0
@@ -190,14 +190,14 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   mixerBlueOutRedIn:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: -12
   mixerBlueOutGreenIn:
-    overrideState: 0
+    overrideState: 1
     value: 0
   mixerBlueOutBlueIn:
-    overrideState: 0
-    value: 100
+    overrideState: 1
+    value: 172
   lift:
     overrideState: 0
     value: {x: 1, y: 1, z: 1, w: 0}
@@ -1422,8 +1422,8 @@ MonoBehaviour:
   settings:
   - {fileID: -8709273342851752050}
   - {fileID: -2991298888012992013}
-  - {fileID: -2588635958109695742}
   - {fileID: 6359249459927747358}
+  - {fileID: -570609968681504274}
 --- !u!114 &6359249459927747358
 MonoBehaviour:
   m_ObjectHideFlags: 3
