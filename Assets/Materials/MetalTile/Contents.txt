@@ -1,0 +1,6 @@
+GT1AO - Ambient Occlusion Map
+GT1D - Diffuse
+GT1HM - Hight Map
+GT1N - Normal Map
+GT1S - Specular Map
+Halo CEA Screenshot - Reference Picture

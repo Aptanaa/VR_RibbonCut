@@ -1,5 +1,8 @@
 # VR Ribbon Cutting experience for Saxion XR lab.
 
+VR Application made for the Saxion XR lab opening 
+
+## Credits
 - Boilerplate from https://github.com/EricFreeman/UnityViveBoilerplate
 - Combat Scissor Model by cube931@gmail.com
 - Table Model from https://free3d.com/3d-model/cinema4d-table-66762.html
