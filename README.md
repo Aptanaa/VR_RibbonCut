@@ -2,6 +2,10 @@
 
 VR Application made for the Saxion XR lab opening 
 
+## Installation
+
+This repository uses LFS. To recieve the full project, please [install Git LFS](https://github.com/git-lfs/git-lfs/wiki/Tutorial) and use the command `git lfs pull` after cloning the project.
+
 ## Credits
 - Boilerplate from https://github.com/EricFreeman/UnityViveBoilerplate
 - Combat Scissor Model by cube931@gmail.com
